@@ -21,7 +21,8 @@ lazy val root = (project in file(".")).
       "org.scalaj" %% "scalaj-http" % "2.3.0",
       "org.json4s" %% "json4s-jackson" % "3.5.1",
       "org.scodec" %% "scodec-core" % "1.8.3",
-      "org.scodec" %% "scodec-bits" % "1.0.11"
+      "org.scodec" %% "scodec-bits" % "1.0.11",
+      "com.amazonaws" % "aws-java-sdk-dynamodb" % "1.11.86" % "provided"
     )
 )
 

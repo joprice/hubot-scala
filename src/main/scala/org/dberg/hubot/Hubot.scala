@@ -16,7 +16,7 @@ class Hubot extends RobotComponent with BrainComponent with EventComponent with 
   val robotService = new RobotService
 
   logger.debug("Creating Brain Service")
-  val brainService = new BrainService
+  brainService
 
   logger.debug("Creating Event Service")
   val eventService = new EventService

@@ -16,10 +16,10 @@ object MapdbBackend extends BrainBackendBase with StrictLogging {
   private val dbHash = db.hashMap("hubot", Serializer.STRING, Serializer.BYTE_ARRAY).createOrOpen()
   logger.debug("Done with MapDB Setup")
 
-  def setKey[A: SCodec](key: String, value: A) =
+  def set[A: SCodec](key: String, value: A) =
     dbHash.put(key, encode(value).getOrElse(Array()))
 
-  def getKey[A: SCodec](key: String): Try[A] = {
+  def get[A: SCodec](key: String): Try[A] = {
     val result = dbHash.get(key)
     decode[A](result)
   }
